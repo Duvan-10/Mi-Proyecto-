@@ -1,0 +1,233 @@
+/* styles.css */
+:root {
+  --bg: #0f172a;           /* slate-900 */
+  --surface: #111827;      /* gray-900 */
+  --card: #0b1220;         /* near-slate */
+  --text: #e5e7eb;         /* gray-200 */
+  --muted: #9ca3af;        /* gray-400 */
+  --primary: #22c55e;      /* green-500 */
+  --primary-700: #15803d;  /* green-700 */
+  --danger: #ef4444;       /* red-500 */
+  --border: #1f2937;       /* gray-800 */
+  --focus: #a7f3d0;        /* emerald-200 */
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: linear-gradient(160deg, var(--bg), #0a0f1d 60%);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.auth {
+  min-height: 100vh;              /* ocupa toda la altura de la pantalla */
+  display: flex;                  /* usa flexbox */
+  justify-content: center;        /* centra horizontalmente */
+  align-items: center;            /* centra verticalmente */
+  background: linear-gradient(160deg, var(--bg), #0a0f1d 60%);
+  overflow-y: hidden;             /* evita scroll vertical */
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;               /* límite para que no se desborde */
+  margin: auto;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.brand-logo {
+  width: 100px;       
+  height: auto;       
+  object-fit: contain;
+  margin-bottom: 16px; 
+}
+
+
+h1 {
+  font-size: 1.2rem;   
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #0b1220;
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+input::placeholder { color: #6b7280; }
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+}
+
+.help {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.error {
+  margin: 6px 0 0 0;
+  color: var(--danger);
+  font-size: 0.9rem;
+  min-height: 1.1em;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0 18px;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.link,
+.link-button {
+  color: #a7f3d0;
+  font-weight: 600;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.link:hover,
+.link-button:hover { text-decoration: underline; }
+
+.btn {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #062d14;
+}
+
+.btn.primary:hover { background: var(--primary-700); color: #e7f7ee; }
+
+.status {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  min-height: 1.2em;
+  text-align: center;
+}
+
+.auth-footer {
+  margin-top: 16px; 
+  text-align: center;
+}
+
+.register-wrapper {
+  margin-top: 12px;         /* más cerca del botón */
+  text-align: center;
+}
+
+.register-link {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #a7f3d0;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: rgba(34, 197, 94, 0.15);
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.register-link:hover {
+  background-color: rgba(34, 197, 94, 0.3);
+  text-decoration: underline;
+}
+
+
+.auth-aside {
+  background: radial-gradient(1200px 600px at 70% 40%, rgba(34,197,94,.18), transparent 60%),
+              radial-gradient(800px 500px at 20% 60%, rgba(56,189,248,.15), transparent 70%),
+              linear-gradient(120deg, #0b1220, #0c1322 50%, #0a1120 100%);
+  display: grid;
+  place-items: center;
+  padding: 40px;
+}
+
+.aside-content {
+  max-width: 520px;
+}
+
+.aside-content h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.bullets li {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .auth { grid-template-columns: 1fr; }
+  .auth-aside { display: none; }
+}
+
+.forgot-password {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
