@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reportes e Informes | PFEps</title>
+
+  <link rel="stylesheet" href="informes.css" />
+
+</head>
+<body>
+  <header>Reportes e Informes</header>
+
+  <!-- Filtros -->
+  <section class="filter-section">
+    <h2>Filtrar reportes</h2>
+    <form id="filterForm">
+      <label>Fecha inicio:</label>
+      <input type="date" id="fechaInicio" required />
+
+      <label>Fecha fin:</label>
+      <input type="date" id="fechaFin" required />
+
+      <button type="submit" class="btn">Generar Reporte</button>
+    </form>
+  </section>
+
+  <!-- Tabla de reportes -->
+  <section class="list-section">
+    <h2>Resultados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Cliente</th>
+          <th>Producto</th>
+          <th>Fecha</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="reportesTable">
+        <!-- Filas dinámicas -->
+      </tbody>
+    </table>
+    <button class="btn" onclick="exportarCSV()">Exportar a CSV</button>
+  </section>
+
+  <script src="informes.js"></script>
+
+</body>
+</html>

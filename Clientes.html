@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Clientes | PFEps</title>
+
+  <link rel="stylesheet" href="clientes.css" />
+  
+</head>
+<body>
+  <header>Gestión de Clientes</header>
+
+  <!-- Formulario de registro -->
+  <section class="form-section">
+    <h2>Registrar nuevo cliente</h2>
+    <form id="clienteForm">
+      <label>Nombre completo:</label>
+      <input type="text" id="nombre" required />
+
+      <label>RUT/NIT:</label>
+      <input type="text" id="rut" required />
+
+      <label>Correo electrónico:</label>
+      <input type="email" id="correo" required />
+
+      <label>Teléfono:</label>
+      <input type="text" id="telefono" />
+
+      <button type="submit" class="btn">Registrar Cliente</button>
+    </form>
+  </section>
+
+  <!-- Listado de clientes -->
+  <section class="list-section">
+    <h2>Clientes registrados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>RUT/NIT</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+        </tr>
+      </thead>
+      <tbody id="clientesTable">
+        <!-- Filas dinámicas -->
+      </tbody>
+    </table>
+  </section>
+
+  <script src="clientes.js"></script>
+</body>
+</html>

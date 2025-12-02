@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Productos | PFEps</title>
+
+  <link rel="stylesheet" href="catalogos.css" />
+</head>
+<body>
+  <header>Catálogo de Productos y Servicios</header>
+
+  <!-- Formulario de registro -->
+  <section class="form-section">
+    <h2>Registrar nuevo producto</h2>
+    <form id="productoForm">
+      <label>SKU (Código interno):</label>
+      <input type="text" id="sku" required />
+
+      <label>Nombre del producto/servicio:</label>
+      <input type="text" id="nombre" required />
+
+      <label>Precio unitario:</label>
+      <input type="number" id="precio" min="0" required />
+
+      <label>Impuesto (%):</label>
+      <input type="number" id="impuesto" min="0" max="100" required />
+
+      <label>Stock inicial:</label>
+      <input type="number" id="stock" min="0" required />
+
+      <button type="submit" class="btn">Registrar Producto</button>
+    </form>
+  </section>
+
+  <!-- Listado de productos -->
+  <section class="list-section">
+    <h2>Productos registrados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>SKU</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Impuesto</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody id="productosTable">
+        <!-- Filas dinámicas -->
+      </tbody>
+    </table>
+  </section>
+
+  <script src="catalogos.js"></script>
+</body>
+</html>

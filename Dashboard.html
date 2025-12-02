@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | PFEps</title>
+
+  <link rel="stylesheet" href="Dasboard.css" />
+
+</head>
+
+<body>
+  <header>Bienvenido, Duvan</header>
+
+  <section class="dashboard">
+    <div class="card">
+      <h2 id="ventas">0</h2>
+      <p>Ventas hoy</p>
+    </div>
+    <div class="card">
+      <h2 id="clientes">0</h2>
+      <p>Clientes registrados</p>
+    </div>
+    <div class="card">
+      <h2 id="productos">0</h2>
+      <p>Productos en stock</p>
+    </div>
+    <div class="card">
+      <h2 id="facturas">0</h2>
+      <p>Facturas este mes</p>
+    </div>
+  </section>
+
+  <div class="actions">
+    <button class="btn" onclick="crearFactura()">Crear Factura</button>
+    <button class="btn" onclick="registrarCliente()">Registrar Cliente</button>
+    <button class="btn" onclick="agregarProducto()">Agregar Producto</button>
+  </div>
+
+  <script src="Dasboard.js"></script>
+</body>
+</html>
+

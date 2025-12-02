@@ -5,6 +5,7 @@ const passwordInput = document.getElementById('password');
 const statusEl = document.querySelector('.status');
 const toggleBtn = document.getElementById('togglePassword');
 
+// Mostrar/ocultar contraseña
 toggleBtn.addEventListener('click', () => {
   const isPassword = passwordInput.getAttribute('type') === 'password';
   passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
@@ -12,17 +13,26 @@ toggleBtn.addEventListener('click', () => {
   passwordInput.focus();
 });
 
+// Mostrar errores
 function showError(input, message) {
   const errorEl = document.querySelector(`.error[data-error-for="${input.id}"]`);
   if (errorEl) errorEl.textContent = message || '';
   input.setAttribute('aria-invalid', message ? 'true' : 'false');
 }
 
+// Validar email
 function validateEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-form.addEventListener('submit', async (e) => {
+// Usuario simulado (para pruebas)
+const usuarioPrueba = {
+  email: "duvan.10dma@gmail.com",
+  password: "12345678" // mínimo 8 caracteres para pasar la validación
+};
+
+// Evento submit del formulario
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   statusEl.textContent = '';
 
@@ -31,6 +41,7 @@ form.addEventListener('submit', async (e) => {
 
   let valid = true;
 
+  // Validación de correo
   if (!email) {
     showError(emailInput, 'El correo es obligatorio.');
     valid = false;
@@ -41,6 +52,7 @@ form.addEventListener('submit', async (e) => {
     showError(emailInput, '');
   }
 
+  // Validación de contraseña
   if (!password) {
     showError(passwordInput, 'La contraseña es obligatoria.');
     valid = false;
@@ -53,66 +65,14 @@ form.addEventListener('submit', async (e) => {
 
   if (!valid) return;
 
-  // Simulación de solicitud de login (reemplaza con tu API)
-  const remember = document.getElementById('remember').checked;
-
-  // Ejemplo de cuerpo para tu backend
-  const payload = { email, password, remember };
-
-  try {
-    // Reemplaza URL con tu endpoint real
-    // const res = await fetch('/api/auth/login', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(payload),
-    // });
-    // const data = await res.json();
-
-    
-// Usuario simulado
-const usuarioPrueba = {
-  email: "duvan.10dma@gmail.com",
-  password: "123"
-};
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const email = emailInput.value.trim();
-  const password = passwordInput.value;
-
+  // Validación contra usuario simulado
   if (email === usuarioPrueba.email && password === usuarioPrueba.password) {
-    // Guardar sesión en localStorage
-    localStorage.setItem("usuario", email);
-
+    localStorage.setItem("usuario", email); // guardar sesión
     statusEl.textContent = "Inicio de sesión correcto. Redirigiendo...";
-    setTimeout(() => 
-      {
+    setTimeout(() => {
       window.location.href = "index.html"; // o dashboard.html
     }, 1000);
   } else {
-
     statusEl.textContent = "Credenciales inválidas. Intenta de nuevo.";
   }
 });
-
-    if (ok) {
-      statusEl.textContent = 'Inicio de sesión correcto. Redirigiendo...';
-
-      // Guardar sesión en localStorage
-localStorage.setItem("usuario", email);
-
-  // Redirigir al Dashboard
-  window.location.href = "Dashboard.html";
-
-}
-
-    } else {
-      statusEl.textContent = 'Credenciales inválidas. Verifica tu correo y contraseña.';
-    }
-  } catch (err) {
-    statusEl.textContent = 'Error de conexión. Inténtalo de nuevo.';
-  }
-});
-
-

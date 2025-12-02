@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuración de Impuestos | PFEps</title>
+
+  <link rel="stylesheet" href="impuestos.css" />
+  
+</head>
+<body>
+  <header>Configuración de Impuestos</header>
+
+  <!-- Formulario de configuración -->
+  <section class="form-section">
+    <h2>Registrar nueva tasa de impuesto</h2>
+    <form id="impuestoForm">
+      <label>Nombre del impuesto:</label>
+      <input type="text" id="nombreImpuesto" required />
+
+      <label>Porcentaje (%):</label>
+      <input type="number" id="porcentaje" min="0" max="100" required />
+
+      <button type="submit" class="btn">Guardar Impuesto</button>
+    </form>
+  </section>
+
+  <!-- Listado de impuestos -->
+  <section class="list-section">
+    <h2>Impuestos configurados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Porcentaje</th>
+        </tr>
+      </thead>
+      <tbody id="impuestosTable">
+        <!-- Filas dinámicas -->
+      </tbody>
+    </table>
+  </section>
+
+  <script src="impuestos.js"></script>
+</body>
+</html>

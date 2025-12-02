@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Facturas | PFEps</title>
+
+  <link rel="stylesheet" href="G.css" />
+
+</head>
+<body>
+  <header>Gestión de Facturas</header>
+
+  <!-- Formulario de creación -->
+  <section class="form-section">
+    <h2>Crear nueva factura</h2>
+    <form id="facturaForm">
+      <label>Cliente:</label>
+      <input type="text" id="cliente" required />
+
+      <label>RUT/NIT:</label>
+      <input type="text" id="rut" required />
+
+      <label>Producto/Servicio:</label>
+      <input type="text" id="producto" required />
+
+      <label>Cantidad:</label>
+      <input type="number" id="cantidad" min="1" required />
+
+      <label>Precio unitario:</label>
+      <input type="number" id="precio" min="0" required />
+
+      <button type="submit" class="btn">Emitir Factura</button>
+    </form>
+  </section>
+
+  <!-- Listado de facturas -->
+  <section class="list-section">
+    <h2>Facturas emitidas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Cliente</th>
+          <th>Producto</th>
+          <th>Total</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody id="facturasTable">
+        <!-- Filas dinámicas -->
+      </tbody>
+    </table>
+  </section>
+
+  <script src="G.js"></script>
+</body>
+</html>
